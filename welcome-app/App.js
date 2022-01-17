@@ -11,6 +11,18 @@ class App extends Component {
     }
   }
 
+  handleChange = event => {
+    this.setState({
+      name: event.target.value
+    });
+  };
+
+  handleClick = event => {
+    this.setState({
+      displayName: this.state.name
+    });
+  };
+
   render() {
     return (
       <>
