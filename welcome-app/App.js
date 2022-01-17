@@ -14,7 +14,10 @@ class App extends Component {
   render() {
     return (
       <>
-        
+        <h1>Welcome to the app.</h1>
+        <p>Hi there, {this.state.displayName || "We haven't been introduced"}</p>
+        <input value={this.state.name} onChange={this.handleChange} />
+        <button onClick={this.handleClick}>Update name</button>
       </>
     );
   }
