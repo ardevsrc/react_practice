@@ -6,7 +6,7 @@ export default props => {
   return (
     <>
       <input value={name} onChange={(event) => setName(event.target.value)} />
-      <button onClick={() => props.handleChange(name)}>Update name</button>
+      <button onClick={() => props.handleClick(name)}>Update name</button>
     </>
   );
 }
