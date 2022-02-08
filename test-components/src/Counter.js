@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CounterView from './CounterView';
+import InteractiveView from './InteractiveView';
 
 const Counter = () => {
   const [counter, setCounter] = useState(0);
@@ -9,10 +9,11 @@ const Counter = () => {
   }
 
   return (
-    <CounterView 
-     counterValue={counter}
-     onIncrement={onIncrementHandler}
-    />
+    <InteractiveView
+     value={counter}
+     onAction={onIncrementHandler}
+     actionText="+"
+     />
   );
 };
 
