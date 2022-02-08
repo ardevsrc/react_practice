@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
+import CounterView from './CounterView';
 
 const Counter = () => {
   const [counter, setCounter] = useState(0);
 
-  const onClickHandler = () => {
+  const onIncrementHandler = () => {
     setCounter(counter + 1);
   }
 
   return (
-    <>
-      <p>{counter}</p>
-      <button type="button" onClick={onClickHandler}>Increment</button>
-    </>
+    <CounterView 
+     counterValue={counter}
+     onIncrement={onIncrementHandler}
+    />
   );
 };
 
