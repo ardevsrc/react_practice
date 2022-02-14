@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const IceCreamImage = ({iceCreamId}) => 
   iceCreamId != null && (<img 
@@ -6,5 +7,9 @@ const IceCreamImage = ({iceCreamId}) =>
   alt=""
   />
 );
+
+IceCreamImage.propTypes = {
+  iceCreamId: PropTypes.number.isRequired
+}
 
 export default IceCreamImage;
