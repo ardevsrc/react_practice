@@ -30,7 +30,8 @@ const Menu = () => {
       <h2 className="main-heading">Rock your taste buds with one of these!</h2>
       <LoaderMessage
         loadingMessage="Loading menu..."
-        isLoading={isLoading} />
+        isLoading={isLoading} 
+        doneMessage="Loading menu complete."/>
       {menu.length > 0 ? 
       (<ul className="container">
         {menu.map(({id, iceCream, price, description, inStock, quantity}) => 
@@ -52,8 +53,7 @@ const Menu = () => {
           </section>
         </li>
         )}
-      </ul>) : (
-        !isLoading && <p> Your menu is empty! the sadness!!!</p>)
+      </ul>) : (!isLoading && <p> Your menu is empty! the sadness!!!</p>)
       }
     </main>
   )

@@ -23,7 +23,8 @@ const LoaderMessage = ({loadingMessage, doneMessage, isLoading}) => {
         }, 300);
       }
     }
-    isLoadingPreviousValue = isLoading;
+    
+    isLoadingPreviousValue.current = isLoading;
 
     return () => {
       clearTimeout(loadingMessageDelay);
