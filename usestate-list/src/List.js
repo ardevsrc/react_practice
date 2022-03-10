@@ -21,6 +21,7 @@ const List = () => {
       })}
 
       <button className="btn" onClick={() => setPeople([])}>clear items</button>
+      <button className="btn" onClick={() => setPeople(data)}>load data</button>
     </>
   );
 }
