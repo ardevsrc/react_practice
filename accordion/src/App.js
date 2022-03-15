@@ -1,11 +1,23 @@
-
-import './App.css';
+import React, { useState } from 'react';
+import data from './data';
+import SingleQuestion from './Question';
 
 function App() {
-  return (
-    <div className="App">
+  const [questions, setQuestions] = useState(data);
 
-    </div>
+  return (
+    <main>
+      <div className="container">
+        <h3>Questions and answers about logging</h3>
+        <section className="info">
+          {
+            questions.map((question) => {
+              return <SingleQuestion key={question.id} {...question} />
+            })
+          }
+        </section>
+      </div>
+    </main>
   );
 }
 
