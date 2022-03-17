@@ -3,8 +3,11 @@ import {getMenu} from '../data/iceCreamData';
 import Helmet from 'react-helmet';
 import IceCreamImage from './IceCreamImage';
 import LoaderMessage from '../structure/LoaderMessage';
+import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Menu = () => {
+
+const Menu = ({history}) => {
   const [menu, setMenu] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -21,6 +24,16 @@ const Menu = () => {
     }
   }, []);
 
+  const onItemClickHandler = to => {
+    history.push(to);
+  }
+
+  const onLinkClickHandler = e => {
+    // This is done to avoid the click handler of the <section>
+    // firing and placing two browse entries in browser history
+    e.stopPropagation();
+  }
+
 
   return (
     <main>
@@ -36,12 +49,22 @@ const Menu = () => {
       (<ul className="container">
         {menu.map(({id, iceCream, price, description, inStock, quantity}) => 
         <li key={id.toString()}>
-          <section className="card">
+          <section className="card"
+           onClick={() => {
+             onItemClickHandler(`/menu-items/${id.toString()}`);
+           }}
+          >
             <div className="image-container">
               <IceCreamImage iceCreamId={iceCream.id} />
             </div>
             <div className="text-container">
-              <h3>{iceCream.name}</h3>
+              <h3>
+               <Link 
+               to={`/menu-items/${id.toString()}`} 
+               onClick={onLinkClickHandler}>
+                 {iceCream.name}
+                </Link>  
+              </h3>
               <div className="content card-content">
                 <p className="price">{`$${price.toFixed(2)}`}</p>
                 <p className={`stock${inStock ? '' : ' out'}`}>
@@ -59,4 +82,9 @@ const Menu = () => {
   )
 };
 
+Menu.propTypes = {
+    history:PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }),
+}
 export default Menu;

@@ -1,10 +1,14 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 const EditIceCream = () => {
 
   return (
     <main>
-      <h2>UPdate this beauty</h2>
+      <Helmet>
+        <title> Update this beauty | Ultimate Ice Cream</title>
+      </Helmet>
+      <h2 className="main-heading">Update this beauty</h2>
     </main>
   );
 };
