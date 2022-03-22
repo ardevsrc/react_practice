@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import { FaTimes } from 'react-icons/fa';
-import { social, links } from '.data';
+import { social, links } from './data';
 import { useGlobalContext } from './context';
 
 const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar }= useGlobalContext();
+  const { isSidebarOpen, closeSidebar } = useGlobalContext();
 
   return (
     <aside className={`${isSidebarOpen ? 'sidebar show-sidebar': 'sidebar'}`}>

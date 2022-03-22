@@ -21,7 +21,6 @@ const AppProvider = ({ children }) => {
       openSidebar,
       closeSidebar
     }}
-    
     >
       {children}
     </AppContext.Provider>
