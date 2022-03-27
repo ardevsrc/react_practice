@@ -1,22 +1,24 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Error from './pages/Error';
-import Navbar from "./components/Navbar";
-import SingleCocktail from './pages/SingleCocktail';
+// import pages
+import Home from './pages/Home'
+import About from './pages/About'
+import SingleCocktail from './pages/SingleCocktail'
+import Error from './pages/Error'
 
+// import components
+import Navbar from './components/Navbar'
 function App() {
   return (
     <Router>
       <Navbar />
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
         <Route path="/about">
-          <About/>
+          <About />
         </Route>
         <Route path="/cocktail/:id">
           <SingleCocktail />
@@ -26,7 +28,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
