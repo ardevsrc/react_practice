@@ -9,7 +9,7 @@ const Login = ({ setUser }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || !email) return;
-    setUser(name, email);
+    setUser({name:name, email:email});
     navigate('/dashboard');
   };
 
