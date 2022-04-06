@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const url = 'https:/api.github.com/users/john-smilga/followers?per_page=200';
 
-const useFetch = () => {
+export const useFetch = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
