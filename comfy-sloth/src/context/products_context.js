@@ -23,11 +23,11 @@ export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const openSidebar = () => {
-    dispatch(SIDEBAR_OPEN);
+    dispatch({ type: SIDEBAR_OPEN });
   }
 
   const closeSidebar = () => {
-    dispatch(SIDEBAR_CLOSE);
+    dispatch({ type: SIDEBAR_CLOSE });
   }
 
  
