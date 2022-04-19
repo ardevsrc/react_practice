@@ -1,16 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs'
-const Stars = ({ stars, reviews }) => {
-{/* <span>{stars >= 1 ? <BsStarFill /> : stars >= 0.5 ? <BsStarHalf /> : <BsStar />}</span> */}
+import React from 'react';
+import styled from 'styled-components';
+import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
+const Stars = ({ stars, reviews }) => {
   const tempStars = Array.from({length: 5}, (_, i) => {
-    const number = i + 0.5;
+    const decimal = i + 0.5;
     return (
       <span key={i}>
         {stars >= i + 1 ? (
           <BsStarFill />
-        ) : stars >= number ? (
+        ) : stars >= decimal ? (
           <BsStarHalf />
         ) : (
           <BsStar />
@@ -43,4 +42,4 @@ const Wrapper = styled.div`
   }
   margin-bottom: 0.5rem;
 `
-export default Stars
+export default Stars;

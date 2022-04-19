@@ -45,7 +45,7 @@ const SingleProductPage = () => {
     return <Error />;
   }
 
-  const {name, price, description, stock, stars, reviews, id:sku, company, images } = product
+  const {name, price, description, stock, stars, reviews, id:sku, company, images } = product;
   return (
     <Wrapper>
       <PageHero title={name} product />
@@ -73,13 +73,13 @@ const SingleProductPage = () => {
               {company}
             </p>
             <hr />
-            {stock > 0 && <AddToCart />}
+            {stock > 0 && <AddToCart product={product} />}
           </section>
         </div>
       </div>
     </Wrapper>
   );
-}
+};
 
 const Wrapper = styled.main`
   .product-center {
@@ -113,6 +113,6 @@ const Wrapper = styled.main`
       font-size: 1.25rem;
     }
   }
-`
+`;
 
-export default SingleProductPage
+export default SingleProductPage;
