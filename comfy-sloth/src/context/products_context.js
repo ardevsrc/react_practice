@@ -82,5 +82,5 @@ export const ProductsProvider = ({ children }) => {
 }
 
 export const useProductsContext = () => {
-  return useContext(ProductsContext)
+  return useContext(ProductsContext);
 }
