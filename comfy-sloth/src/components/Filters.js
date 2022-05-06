@@ -29,7 +29,7 @@ const Filters = () => {
   return (
     <Wrapper>
       <div className="content">
-        <form onSubmit={(e) => e.preventDefault() }>
+        <form onSubmit={(e) => e.preventDefault()}>
           <div className="form-control">
             <input 
               type="text" 
@@ -48,7 +48,7 @@ const Filters = () => {
                     return (
                       <button 
                         key={index}
-                        onclick={updateFilters}
+                        onClick={updateFilters}
                         type="button"
                         name="category"
                         className={`${category === c.toLowerCase() ? 'active' : null}`}
@@ -70,6 +70,38 @@ const Filters = () => {
                     return <option key={index} value={c}>{c}</option>
                   })}
                 </select>
+            </div>
+            <div className="form-control">
+              <h5>colors</h5>
+              <div className="colors">
+                {
+                  colors.map((c, index) => {
+                    if (c === 'all') {
+                      return (
+                      <button 
+                        Key={index}
+                        name="color" 
+                        onClick={updateFilters} 
+                        data-color="all"
+                        className ={`${color === 'all' ? 'all-btn active' : 'all-btn'}`}
+                        >all</button>
+                      )
+                    }
+                    return (
+                      <button 
+                        key={index} 
+                        name="color" 
+                        style={{background:c}} 
+                        className={`${color === c?'color-btn active':'color-btn'}`}
+                        data-color={c}
+                        onClick={updateFilters}
+                        >
+                         {color === c ? <FaCheck /> : null}        
+                      </button>
+                    )
+                  })
+                }
+              </div>
             </div>
         </form>
       </div>
